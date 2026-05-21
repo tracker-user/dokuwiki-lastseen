@@ -1,0 +1,16 @@
+/* Last Seen plugin — admin table styling */
+
+.plugin_lastseen .lastseen_rel {
+    color: #888;
+    font-size: 90%;
+}
+
+.plugin_lastseen .lastseen_never {
+    color: #888;
+    font-style: italic;
+}
+
+.lastseen_count {
+    color: #888;
+    font-size: 90%;
+}
