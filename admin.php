@@ -154,6 +154,12 @@ class admin_plugin_lastseen extends DokuWiki_Admin_Plugin
             $arrow = ($order === 'asc') ? ' &#9650;' : ' &#9660;';
         }
 
+        // wl() already returns an HTML-safe URL — its default separator is the
+        // pre-encoded "&amp;". It must NOT be passed through hsc(): doing so
+        // double-encodes the ampersands ("&amp;" -> "&amp;amp;"), the browser
+        // then navigates to a URL containing a literal "&amp;", and the query
+        // parameters arrive mis-named ("amp;sort" instead of "sort") — which
+        // silently breaks sorting. The label, being plain text, IS hsc()'d.
         $url = wl($id, [
             'do'    => 'admin',
             'page'  => 'lastseen',
@@ -161,7 +167,7 @@ class admin_plugin_lastseen extends DokuWiki_Admin_Plugin
             'order' => $newOrder,
         ]);
 
-        echo '<th><a href="' . hsc($url) . '">' . hsc($label) . $arrow . '</a></th>';
+        echo '<th><a href="' . $url . '">' . hsc($label) . $arrow . '</a></th>';
     }
 
     /**
