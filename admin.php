@@ -14,10 +14,10 @@ class admin_plugin_lastseen extends DokuWiki_Admin_Plugin
         return true;
     }
 
-    /** Position in the admin menu — directly after User Manager (sort 2). */
+    /** Position in the admin menu. */
     public function getMenuSort()
     {
-        return 3;
+        return 1000;
     }
 
     public function getMenuText($language)
