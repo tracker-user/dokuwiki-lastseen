@@ -1,4 +1,11 @@
 <?php
+
+if (!defined('DOKU_INC')) die();
+
+use dokuwiki\Extension\ActionPlugin;
+use dokuwiki\Extension\EventHandler;
+use dokuwiki\Extension\Event;
+
 /**
  * Last Seen plugin — activity tracker.
  *
@@ -6,9 +13,13 @@
  * can show when every registered user was last active.
  */
 
-class action_plugin_lastseen extends DokuWiki_Action_Plugin
+class action_plugin_lastseen extends ActionPlugin
 {
-    public function register(Doku_Event_Handler $controller)
+    /**
+     * @param EventHandler $controller
+     * @return void
+     */
+    public function register(EventHandler $controller)
     {
         // DOKUWIKI_STARTED fires on essentially every request, after
         // authentication has resolved. By this point REMOTE_USER is set for
@@ -19,9 +30,10 @@ class action_plugin_lastseen extends DokuWiki_Action_Plugin
     }
 
     /**
-     * @param Doku_Event $event  unused (DOKUWIKI_STARTED carries no data)
+     * @param Event $event  unused (DOKUWIKI_STARTED carries no data)
+     * @return void
      */
-    public function recordActivity(Doku_Event $event)
+    public function recordActivity(Event $event)
     {
         global $INPUT;
 

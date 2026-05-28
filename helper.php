@@ -1,4 +1,9 @@
 <?php
+
+if (!defined('DOKU_INC')) die();
+
+use dokuwiki\Extension\Plugin;
+
 /**
  * Last Seen plugin — storage helper.
  *
@@ -7,7 +12,7 @@
  * component (which displays it).
  */
 
-class helper_plugin_lastseen extends DokuWiki_Plugin
+class helper_plugin_lastseen extends Plugin
 {
     /**
      * Absolute path to the storage file.

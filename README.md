@@ -53,7 +53,7 @@ Drop the folder into `lib/plugins/lastseen/`, or use Admin → Extension Manager
 
 ## Tested against
 
-DokuWiki `2025-05-14b "Librarian"` — 27 functional tests covering storage, throttle behavior, user enumeration, and table rendering, all passing under `error_reporting=E_ALL`.
+DokuWiki `2025-05-14b "Librarian"` under `error_reporting=E_ALL`.
 
 ## License
 

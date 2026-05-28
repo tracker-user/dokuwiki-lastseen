@@ -16,6 +16,7 @@ $lang['col_lastseen'] = 'Last seen';
 
 $lang['never']        = 'never';
 $lang['total']        = '%d users';
+$lang['total_one']    = '%d user';
 $lang['no_userlist']  = 'The active authentication backend cannot list users, '
                       . 'so a complete roster is unavailable.';
 

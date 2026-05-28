@@ -1,4 +1,9 @@
 <?php
+
+if (!defined('DOKU_INC')) die();
+
+use dokuwiki\Extension\AdminPlugin;
+
 /**
  * Last Seen plugin — admin panel page.
  *
@@ -6,26 +11,42 @@
  * activity. Appears in the Admin panel right after the User Manager.
  */
 
-class admin_plugin_lastseen extends DokuWiki_Admin_Plugin
+class admin_plugin_lastseen extends AdminPlugin
 {
-    /** Admin-only — last-seen data is mildly sensitive activity information. */
+    /**
+     * Admin-only — last-seen data is mildly sensitive activity information.
+     *
+     * @return bool
+     */
     public function forAdminOnly()
     {
         return true;
     }
 
-    /** Position in the admin menu. */
+    /**
+     * Position in the admin menu.
+     *
+     * @return int
+     */
     public function getMenuSort()
     {
         return 1000;
     }
 
+    /**
+     * @param string $language
+     * @return string
+     */
     public function getMenuText($language)
     {
         return $this->getLang('menu');
     }
 
-    /** Read-only page — no form submissions to process. */
+    /**
+     * Read-only page — no form submissions to process.
+     *
+     * @return void
+     */
     public function handle()
     {
     }
@@ -129,7 +150,8 @@ class admin_plugin_lastseen extends DokuWiki_Admin_Plugin
         }
 
         echo '</tbody></table></div>';
-        echo '<p class="lastseen_count">' . sprintf($this->getLang('total'), $count) . '</p>';
+        $totalKey = ($count === 1) ? 'total_one' : 'total';
+        echo '<p class="lastseen_count">' . sprintf($this->getLang($totalKey), $count) . '</p>';
     }
 
     /**
