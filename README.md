@@ -1,19 +1,19 @@
 # User Last Seen plugin for DokuWiki
 
-Records when each registered user was last active on the wiki, and shows it in an Admin-panel page next to the User Manager. Useful for spotting dormant or stale accounts.
+Records when each registered user was last active on the wiki, and shows it in an Admin-panel page. Useful for spotting dormant or stale accounts.
 
 This is an original plugin (not a fork), built for a Librarian-based wiki.
 
 ## What it does
 
 - Every authenticated request updates that user's "last seen" timestamp. This is **last activity**, not just last login — a page view made with a persistent ("remember me") cookie counts, because the tracker hooks `DOKUWIKI_STARTED`, which fires after authentication resolves regardless of how the user authenticated.
-- An Admin page (**User Last Seen**, next to User Manager) lists every registered user with four columns: **Username · Display name · Groups · Last seen**. No email column.
+- An Admin page (**User Last Seen**) lists every registered user with four columns: **Username · Display name · Groups · Last seen**. No email column. It appears in the "Additional plugins" section of the Admin panel (below the version info), not in the built-in "Administration" block where the User Manager lives — DokuWiki hard-codes which plugins get top-block placement, and third-party plugins always go into the lower section.
 - "Last seen" shows both an absolute timestamp and a relative time ("3 days ago"). Users never seen since the plugin was installed show "never".
 - Column headers are clickable to sort — sort by "Last seen" ascending to float dormant accounts to the top.
 
 ## Why an Admin page and not a column in the User Manager
 
-The bundled User Manager fires no events for table rendering — its table is built with hardcoded `echo` statements and a fixed five-column layout. Adding a column would require forking the bundled `usermanager` plugin, which DokuWiki *core* upgrades overwrite (unlike third-party plugins). A separate Admin page uses only public APIs (`retrieveUsers()`, the admin-plugin interface), survives upgrades untouched, and can do things a cramped column can't — sortable, relative times, "never" highlighting.
+The bundled User Manager fires no events for table rendering — its table is built with hardcoded `echo` statements and a fixed five-column layout. Adding a column would require forking the bundled `usermanager` plugin, which DokuWiki *core* upgrades overwrite (unlike third-party plugins). A separate Admin page uses only public APIs (`retrieveUsers()`, the admin-plugin interface), survives upgrades untouched, and can do things a cramped column can't — sortable, relative times, "never" highlighting. DokuWiki's admin UI hard-codes six built-in plugins (`usermanager`, `acl`, `extension`, `config`, `logviewer`, `styling`) in the top "Administration" block; all third-party admin plugins appear in a separate "Additional plugins" section below.
 
 ## Architecture
 

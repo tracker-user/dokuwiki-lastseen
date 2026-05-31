@@ -63,7 +63,7 @@ class admin_plugin_lastseen extends AdminPlugin
         /** @var helper_plugin_lastseen $hlp */
         $hlp = plugin_load('helper', 'lastseen');
         if ($hlp === null) {
-            echo '<div class="error">Helper component could not be loaded.</div>';
+            echo '<div class="error">' . hsc($this->getLang('helper_missing')) . '</div>';
             return;
         }
 
@@ -209,17 +209,22 @@ class admin_plugin_lastseen extends AdminPlugin
             return $this->getLang('rel_now');
         }
         if ($diff < 3600) {
-            return sprintf($this->getLang('rel_minutes'), (int) floor($diff / 60));
+            $n = (int) floor($diff / 60);
+            return sprintf($this->getLang($n === 1 ? 'rel_minute' : 'rel_minutes'), $n);
         }
         if ($diff < 86400) {
-            return sprintf($this->getLang('rel_hours'), (int) floor($diff / 3600));
+            $n = (int) floor($diff / 3600);
+            return sprintf($this->getLang($n === 1 ? 'rel_hour' : 'rel_hours'), $n);
         }
         if ($diff < 86400 * 30) {
-            return sprintf($this->getLang('rel_days'), (int) floor($diff / 86400));
+            $n = (int) floor($diff / 86400);
+            return sprintf($this->getLang($n === 1 ? 'rel_day' : 'rel_days'), $n);
         }
         if ($diff < 86400 * 365) {
-            return sprintf($this->getLang('rel_months'), (int) floor($diff / (86400 * 30)));
+            $n = (int) floor($diff / (86400 * 30));
+            return sprintf($this->getLang($n === 1 ? 'rel_month' : 'rel_months'), $n);
         }
-        return sprintf($this->getLang('rel_years'), (int) floor($diff / (86400 * 365)));
+        $n = (int) floor($diff / (86400 * 365));
+        return sprintf($this->getLang($n === 1 ? 'rel_year' : 'rel_years'), $n);
     }
 }

@@ -91,19 +91,27 @@ class helper_plugin_lastseen extends Plugin
 
         // Slow path: a write is due. Lock, re-read (a concurrent request may
         // have just updated it), update, save atomically, unlock.
+        //
+        // We lock a *sentinel* path (.lock suffix) rather than $path itself.
+        // io_saveFile() calls io_lock()/io_unlock() on its own argument, so
+        // locking $path here would cause a double-lock on the same md5 key:
+        // the inner lock busy-waits the full 3-second stale-lock timeout on
+        // every write, then tears down the directory prematurely — eliminating
+        // the mutual-exclusion we intended while stalling the request.
         $path = $this->getStorePath();
-        io_lock($path);
+        $lock = $path . '.lock';
+        io_lock($lock);
 
         $all = $this->getAll();
         if (isset($all[$user]) && ($now - $all[$user]) < $interval) {
             // Lost the race — another request updated it while we waited.
-            io_unlock($path);
+            io_unlock($lock);
             return false;
         }
         $all[$user] = $now;
         io_saveFile($path, serialize($all));
 
-        io_unlock($path);
+        io_unlock($lock);
         return true;
     }
 }

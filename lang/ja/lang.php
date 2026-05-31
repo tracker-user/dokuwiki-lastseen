@@ -11,15 +11,21 @@ $lang['col_name']     = '表示名';
 $lang['col_grps']     = 'グループ';
 $lang['col_lastseen'] = '最終確認';
 
-$lang['never']        = '未確認';
-$lang['total']        = '%d ユーザー';
-$lang['total_one']    = '%d ユーザー';
-$lang['no_userlist']  = '現在の認証バックエンドはユーザー一覧を取得できないため、'
-                      . '完全な一覧を表示できません。';
+$lang['never']           = '未確認';
+$lang['total']           = '%d ユーザー';
+$lang['total_one']       = '%d ユーザー';
+$lang['no_userlist']     = '現在の認証バックエンドはユーザー一覧を取得できないため、'
+                         . '完全な一覧を表示できません。';
+$lang['helper_missing']  = 'ヘルパーコンポーネントを読み込めませんでした。';
 
-$lang['rel_now']      = 'たった今';
-$lang['rel_minutes']  = '%d 分前';
-$lang['rel_hours']    = '%d 時間前';
-$lang['rel_days']     = '%d 日前';
-$lang['rel_months']   = '%d ヶ月前';
-$lang['rel_years']    = '%d 年前';
+$lang['rel_now']         = 'たった今';
+$lang['rel_minute']      = '%d 分前';
+$lang['rel_minutes']     = '%d 分前';
+$lang['rel_hour']        = '%d 時間前';
+$lang['rel_hours']       = '%d 時間前';
+$lang['rel_day']         = '%d 日前';
+$lang['rel_days']        = '%d 日前';
+$lang['rel_month']       = '%d ヶ月前';
+$lang['rel_months']      = '%d ヶ月前';
+$lang['rel_year']        = '%d 年前';
+$lang['rel_years']       = '%d 年前';
