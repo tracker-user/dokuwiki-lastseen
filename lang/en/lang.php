@@ -11,15 +11,22 @@ $lang['intro']        = 'When each registered user was last active on the wiki. 
 
 $lang['col_login']    = 'Username';
 $lang['col_name']     = 'Display name';
+$lang['col_mail']     = 'Email';
 $lang['col_grps']     = 'Groups';
 $lang['col_lastseen'] = 'Last seen';
 
 $lang['never']           = 'never';
-$lang['total']           = '%d users';
-$lang['total_one']       = '%d user';
+$lang['shown']           = 'Showing %1$d–%2$d of %3$d users';
+$lang['none']            = 'No matching users.';
 $lang['no_userlist']     = 'The active authentication backend cannot list users, '
                          . 'so a complete roster is unavailable.';
 $lang['helper_missing']  = 'Helper component could not be loaded.';
+
+$lang['filter_search']   = 'Search';
+$lang['filter_clear']    = 'Clear';
+$lang['pager_label']     = 'Pagination';
+$lang['pager_prev']      = 'Previous page';
+$lang['pager_next']      = 'Next page';
 
 $lang['rel_now']         = 'just now';
 $lang['rel_minute']      = '%d minute ago';

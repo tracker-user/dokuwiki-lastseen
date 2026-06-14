@@ -14,3 +14,70 @@
     color: __text_alt__;
     font-size: 90%;
 }
+
+/* ---- per-column filter row ------------------------------------------ */
+
+.plugin_lastseen .lastseen_filterrow td {
+    padding-top: 0.3em;
+    padding-bottom: 0.3em;
+}
+
+.plugin_lastseen .lastseen_filterrow input.edit {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.plugin_lastseen .lastseen_filteractions {
+    white-space: nowrap;
+}
+
+.lastseen_clear {
+    margin-left: 0.5em;
+    font-size: 90%;
+}
+
+.plugin_lastseen .lastseen_none {
+    text-align: center;
+    color: __text_alt__;
+    font-style: italic;
+}
+
+/* ---- numbered pager ------------------------------------------------- */
+
+.lastseen_pager {
+    margin: 0.6em 0;
+}
+
+.lastseen_pager .pager_btn,
+.lastseen_pager .pager_cur,
+.lastseen_pager .pager_gap,
+.lastseen_pager .pager_disabled {
+    display: inline-block;
+    min-width: 1.6em;
+    padding: 0.15em 0.45em;
+    margin: 0 0.1em;
+    text-align: center;
+}
+
+.lastseen_pager .pager_btn,
+.lastseen_pager .pager_cur,
+.lastseen_pager .pager_disabled {
+    border: 1px solid __border__;
+}
+
+.lastseen_pager .pager_btn {
+    text-decoration: none;
+}
+
+.lastseen_pager .pager_cur {
+    background-color: __background_alt__;
+    font-weight: bold;
+}
+
+.lastseen_pager .pager_disabled {
+    color: __text_alt__;
+}
+
+.lastseen_pager .pager_gap {
+    border: 0;
+}

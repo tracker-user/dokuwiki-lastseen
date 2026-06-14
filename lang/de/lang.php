@@ -8,15 +8,22 @@ $lang['intro']        = 'Wann jeder registrierte Benutzer zuletzt auf dem Wiki a
 
 $lang['col_login']    = 'Benutzername';
 $lang['col_name']     = 'Anzeigename';
+$lang['col_mail']     = 'E-Mail';
 $lang['col_grps']     = 'Gruppen';
 $lang['col_lastseen'] = 'Zuletzt gesehen';
 
 $lang['never']           = 'nie';
-$lang['total']           = '%d Benutzer';
-$lang['total_one']       = '%d Benutzer';
+$lang['shown']           = '%1$d–%2$d von %3$d Benutzern';
+$lang['none']            = 'Keine passenden Benutzer.';
 $lang['no_userlist']     = 'Das aktive Authentifizierungs-Backend kann keine Benutzerliste abrufen, '
                          . 'daher ist kein vollständiges Verzeichnis verfügbar.';
 $lang['helper_missing']  = 'Die Hilfskomponente konnte nicht geladen werden.';
+
+$lang['filter_search']   = 'Suchen';
+$lang['filter_clear']    = 'Zurücksetzen';
+$lang['pager_label']     = 'Seitennavigation';
+$lang['pager_prev']      = 'Vorherige Seite';
+$lang['pager_next']      = 'Nächste Seite';
 
 $lang['rel_now']         = 'gerade eben';
 $lang['rel_minute']      = 'vor %d Minute';

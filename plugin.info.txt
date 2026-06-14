@@ -1,7 +1,7 @@
 base   lastseen
 author TrackerUser
-email  -
-date   2026-05-31
+email  for-open-source-projects-trust-building@protonmail.com
+date   2026-06-15
 name   User Last Seen
 desc   Records and displays when each registered user was last active on the wiki
 url    https://github.com/tracker-user/dokuwiki-lastseen
