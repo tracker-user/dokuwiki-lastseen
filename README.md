@@ -2,6 +2,8 @@
 
 Records when each registered user was last active on the wiki, and shows it in an Admin-panel page. Useful for spotting dormant or stale accounts.
 
+![User Last Seen admin table with sortable columns and pagination](images/lastseen-screen.png)
+
 ## What it does
 
 - Every authenticated request updates that user's "last seen" timestamp. This is **last activity**, not just last login — a page view made with a persistent ("remember me") cookie counts, because the tracker hooks `DOKUWIKI_STARTED`, which fires after authentication resolves regardless of how the user authenticated.
