@@ -4,4 +4,4 @@ email  for-open-source-projects-trust-building@protonmail.com
 date   2026-06-17
 name   User Last Seen
 desc   Records and displays when each registered user was last active on the wiki
-url    https://github.com/tracker-user/dokuwiki-lastseen
+url    https://www.dokuwiki.org/plugin:lastseen
